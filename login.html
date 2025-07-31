@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BinVisionAI Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="light.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="res/BinVisionAI-Logo-Top.png" alt="Logo" class="logo">
+    </div>
+    <nav>
+      <a id="nav-home" href="#">HOME</a>
+      <a href="#">ABOUT US</a>
+      <a href="#">VISION</a>
+      <a id="nav-contact" href="#">CONTACT</a>
+    </nav>
+    <div class="nav-right">
+      <button id="search-btn" class="icon-button">
+        <img src="res/search-btn.svg" alt="Search" class="icon">
+      </button>
+      <button id="theme-btn" class="icon-button">
+        <img src="res/theme-btn.svg" alt="Theme" class="icon">
+      </button>
+
+      <button id="btn-login" class="btn nav-btn">Login</button>
+      <button id="btn-register" class="btn nav-btn">Register</button>
+    </div>
+  </header>
+
+  <!-- Login Box -->
+  <main class="main-container">
+    <div class="login-card">
+      <img src="res/BinVisionAI-Logo-Card.png" class="card-logo" alt="Card Logo">
+      <h1>Login</h1>
+      <p class="login-subtitle">Please login into your account</p>
+
+      <form action="#" method="POST">
+        <input type="email" name="email" placeholder="Email" class="input" required>
+
+        <input type="text" name="binId" placeholder="Bin ID" class="input" required>
+
+        <input type="password" name="password" placeholder="Password" class="input" required>
+
+        <div class="forgot">
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <div class="button-group">
+          <button type="submit" class="btn login-form-btn">Login</button>
+          <button type="reset" class="btn reset-form-btn">Reset</button>
+        </div>
+      </form>
+
+      <p class="register-link">Don't have an account? <a href="#">Register</a></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-icons">
+        <img src="res/instagram.png" alt="Instagram">
+        <img src="res/facebook.png" alt="Facebook">
+        <img src="res/X.png" alt="X">
+        <img src="res/LinkedIn.png" alt="LinkedIn">
+      </div>
+      <p class="copyright">&copy; 2025 BinVisionAI | All rights reserved</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelector("#theme-btn").addEventListener("click", function () {
+      document.body.classList.toggle("light-theme");
+    });
+  </script>
+</body>
+
+</html>
