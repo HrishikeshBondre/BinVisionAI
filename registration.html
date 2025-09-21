@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BinVisionAI - Register</title>
+  <script src="https://kit.fontawesome.com/dac310e544.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+
+  <link rel="stylesheet" href="registration.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbox">
+      <!-- Logo -->
+      <div class="binvisionAILogoBox">
+        <div class="binvisionAILogo">
+          <img src="BinVisionAI_Logo.png" alt="BinVisionAI" class="BinVisionAILogo">
+        </div>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul id="navMenusBox">
+        <li><a href="UserLandingPage.html#firstPage">HOME</a></li>
+        <li><a href="UserLandingPage.html#fourthPage">ABOUT US</a></li>
+        <li><a href="UserLandingPage.html#vision-section">VISION</a></li>
+        <li><a href="UserLandingPage.html#seventhPage">CONTACT</a></li>
+      </ul>
+
+      <!-- Right side icons -->
+      <div class="symbolBox">
+        <div class="searchButton" id="searchIcon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div id="searchBar" style="display:none; align-items:center; gap:10px;">
+          <input type="text" id="searchInput" placeholder="Search...">
+          <button id="closeSearch">✖</button>
+        </div>
+
+        <div id="themeChangeButton"><i class="fa-solid fa-sun"></i></div>
+      </div>
+
+      <!-- Hamburger icon (mobile) -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Desktop Buttons -->
+      <div class="buttonBox">
+        <a href="login.html">
+          <div class="loginButton">Login</div>
+        </a>
+        <a href="registration.html">
+          <div class="registerButton">Register</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobileMenu" id="mobileMenu">
+    <ul>
+      <li><a href="UserLandingPage.html#firstPage">HOME</a></li>
+      <li><a href="UserLandingPage.html#fourthPage">ABOUT US</a></li>
+      <li><a href="UserLandingPage.html#vision-section">VISION</a></li>
+      <li><a href="UserLandingPage.html#seventhPage">CONTACT</a></li>
+    </ul>
+
+    <!-- 🔹 NEW: Search + Theme icons inside hamburger menu -->
+    <div class="mobileIcons" style="display:flex; gap:20px; justify-content:center; margin:15px 0;">
+      <div class="searchButton" id="searchIconMobile">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div id="themeChangeButtonMobile"><i class="fa-solid fa-sun"></i></div>
+    </div>
+
+    <div id="searchBarMobile"
+      style="display:none; align-items:center; gap:10px; justify-content:center; margin-bottom:15px;">
+      <input type="text" id="searchInputMobile" placeholder="Search...">
+      <button id="closeSearchMobile">✖</button>
+    </div>
+    <!-- 🔹 END NEW -->
+
+    <div class="mobileButtons">
+      <a href="login.html">
+        <div class="loginButton">Login</div>
+      </a>
+      <a href="registration.html">
+        <div class="registerButton">Register</div>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Welcome Card -->
+    <section class="card welcome-card">
+      <div class="card-content">
+        <h1 class="welcome-title">Welcome Back!</h1>
+        <p class="welcome-text">
+          To keep connected with us please login with your personal info
+        </p>
+        <a href="login.html"><button class="sign-in-btn" onclick="toggleForm()">SIGN IN</button></a>
+      </div>
+    </section>
+
+    <!-- Register Card -->
+    <section class="card register-card">
+      <div class="register-header">
+        <div class="register-logo">
+          <div class="register-logo-icon">
+            <img src="BinVisionAI_Logo.png" alt="logo_img" />
+          </div>
+        </div>
+        <h2 class="register-title">Register</h2>
+        <p class="register-subtitle">
+          Sign up to begin your journey with BinVisionAI
+        </p>
+      </div>
+
+      <form class="registration-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <span class="input-icon">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <input type="text" class="form-input" placeholder="Name" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" class="form-input" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <span class="input-icon"><i class="fa-solid fa-mobile-button"></i></span>
+            <input type="tel" class="form-input" placeholder="Mobile No." required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <span class="input-icon"><i class="fa-solid fa-trash-can"></i></span>
+            <input type="text" class="form-input" placeholder="Bin ID" required />
+          </div>
+
+          <div class="form-group">
+            <span class="input-icon"><i class="fa-solid fa-key"></i></i></span>
+            <input type="password" class="form-input" placeholder="Password" required />
+          </div>
+        </div>
+        <div class="action-row">
+          <button type="button" class="btn-qr">
+            <i class="fa-solid fa-qrcode"></i>
+            Scan QR Code
+          </button>
+
+          <div id="qr-reader" style="width:300px; display:none; margin:auto; margin-top:20px;"></div>
+          <div id="qr-result" style="text-align:center; margin-top:10px; font-weight:bold;"></div>
+
+          <button type="button" class="btn-captcha" onclick="toggleCaptcha(this)">
+            ✅ I'm not a robot
+          </button>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-register-form">Register</button>
+          <button type="reset" class="btn-reset">Reset</button>
+        </div>
+
+        <div class="sign-in-link">
+          Already have an account? <a href="login.html">Sign in</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-icons">
+        <!-- <img src="res/instagram.png" alt="Instagram">
+        <img src="res/facebook.png" alt="Facebook">
+        <img src="res/X.png" alt="X">
+        <img src="res/LinkedIn.png" alt="LinkedIn"> -->
+
+        <a href="https://www.instagram.com/_hrishi_bondre_45/" target="_blank"><i class="fa-brands fa-instagram"
+            style="color: #00c30a;"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61557395861212" target="_blank"><i
+            class="fa-brands fa-facebook" style="color: #00c30a;"></i></a>
+        <a href="https://twitter.com/HrishiBondre" target="_blank"><i class="fa-brands fa-x-twitter"
+            style="color: #00c30a;"></i></a>
+        <a href="https://www.linkedin.com/in/hrishikesh-bondre-8134902ab/" target="_blank"><i
+            class="fa-brands fa-linkedin" style="color: #00c30a;"></i></a>
+      </div>
+      <p class="copyright">&copy; 2025 BinVisionAI | All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- Javascript -->
+  <script>
+    var icon = document.getElementById("themeChangeButton");
+    icon.onclick = function () {
+      document.body.classList.toggle("light-theme");
+    }
+
+    // Theme toggle (mobile)
+    var iconMobile = document.getElementById("themeChangeButtonMobile");
+    iconMobile.onclick = function () {
+      document.body.classList.toggle("light-theme");
+    }
+
+    // Search bar toggle (desktop)
+    const searchIcon = document.getElementById("searchIcon");
+    const searchBar = document.getElementById("searchBar");
+    const closeSearch = document.getElementById("closeSearch");
+    const searchInput = document.getElementById("searchInput");
+
+    searchIcon.onclick = function () {
+      searchBar.style.display = "flex";
+      searchInput.focus();
+    }
+    closeSearch.onclick = function () {
+      searchBar.style.display = "none";
+      searchInput.value = "";
+    }
+
+    searchInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        let query = searchInput.value.trim();
+        if (query) {
+          let found = window.find(query);
+          if (!found) alert("❌ Not found: " + query);
+        }
+      }
+    });
+
+    // Search bar toggle (mobile)
+    const searchIconMobile = document.getElementById("searchIconMobile");
+    const searchBarMobile = document.getElementById("searchBarMobile");
+    const closeSearchMobile = document.getElementById("closeSearchMobile");
+    const searchInputMobile = document.getElementById("searchInputMobile");
+
+    searchIconMobile.onclick = function () {
+      searchBarMobile.style.display = "flex";
+      searchInputMobile.focus();
+    }
+    closeSearchMobile.onclick = function () {
+      searchBarMobile.style.display = "none";
+      searchInputMobile.value = "";
+    }
+
+    searchInputMobile.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        let query = searchInputMobile.value.trim();
+        if (query) {
+          let found = window.find(query);
+          if (!found) alert("❌ Not found: " + query);
+        }
+      }
+    });
+
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+
+      if (mobileMenu.style.display === 'block') {
+        mobileMenu.style.display = 'none';
+      } else {
+        mobileMenu.style.display = 'block';
+      }
+    });
+
+    // Hide mobile menu on link click
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.style.display = 'none';
+        hamburger.classList.remove('active');
+      });
+    });
+
+    // Hide menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (
+        mobileMenu.style.display === 'block' &&
+        !mobileMenu.contains(event.target) &&
+        !hamburger.contains(event.target)
+      ) {
+        mobileMenu.style.display = 'none';
+        hamburger.classList.remove('active');
+      }
+    });
+
+  </script>
+</body>
+
+</html>
