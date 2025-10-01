@@ -464,6 +464,10 @@ body.light-theme .input-icon {
   margin: 2rem 0 1rem 0;
 }
 
+.btn-register-form a{
+  text-decoration: none;
+}
+
 .btn-register-form,
 .btn-reset {
   padding: 1rem 2.5rem;
