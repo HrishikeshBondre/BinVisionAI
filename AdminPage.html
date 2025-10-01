@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AdminPage.css">
+    <title>BinVisionAI</title>
+    <script src="https://kit.fontawesome.com/dac310e544.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div id="firstPage">
+        <div class="navbar">
+            <div class="navbox">
+                <div class="binvisionAILogoBox">
+                    <div class="binvisionAILogo">
+                        <img src="BinVisionAI_Logo.png" alt="BinVisionAI" class="BinVisionAILogo">
+                    </div>
+                </div>
+                <ul id="navMenusBox">
+                    <li><a href="#firstPage">HOME</a></li>
+                    <li><a href="UserLandingPage.html#fourthPage">ABOUT US</a></li>
+                    <li><a href="UserLandingPage.html#vision-section">VISION</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+                <div class="symbolBox">
+                    <div class="searchButton" id="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div id="searchBar" style="display:none; align-items:center; gap:10px;">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <button id="closeSearch">✖</button>
+                    </div>
+                    <div id="themeChangeButton"><i class="fa-solid fa-sun"></i></div>
+                </div>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+                <div class="buttonBox">
+                    <a href="#">
+                        <div class="loginButton">Another Login</div>
+                    </a>
+                    <a href="#">
+                        <div class="logButton">Logout</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobileMenu" id="mobileMenu">
+            <ul>
+                <li><a href="UserLandingPage.html#firstPage">HOME</a></li>
+                <li><a href="UserLandingPage.html#fourthPage">ABOUT US</a></li>
+                <li><a href="UserLandingPage.html#vision-section">VISION</a></li>
+                <li><a href="UserLandingPage.html#seventhPage">CONTACT</a></li>
+            </ul>
+            <!-- 🔹 NEW: Search + Theme icons inside hamburger menu -->
+            <div class="mobileIcons" style="display:flex; gap:20px; justify-content:center; margin:15px 0;">
+                <div class="searchButton" id="searchIconMobile"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div id="themeChangeButtonMobile"><i class="fa-solid fa-sun"></i></div>
+            </div>
+            <div id="searchBarMobile"
+                style="display:none; align-items:center; gap:10px; justify-content:center; margin-bottom:15px;">
+                <input type="text" id="searchInputMobile" placeholder="Search...">
+                <button id="closeSearchMobile">✖</button>
+            </div>
+            <!-- 🔹 END NEW -->
+            <div class="mobileButtons">
+                <a href="login.html">
+                    <div class="loginButton">Login</div>
+                </a>
+                <a href="registration.html">
+                    <div class="registerButton">Register</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="firstPageContent">
+            <div class="firstPageBackImg"></div>
+            <div class="firstPageInfo">
+                <div class="bin-details">
+                    <h2>Bin Details</h2>
+                    <div class="detail-box">
+                        <p><strong>Bin ID</strong></p>
+                        <div class="detail-value">123</div>
+                    </div>
+                    <div class="detail-box">
+                        <p><strong>Location</strong></p>
+                        <div class="detail-value">Kherwadi, Bandra East</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="secondPage">
+        <div class="fill_level_section">
+            <div class="fill_Level_text">
+                <h2>Fill Level</h2>
+            </div>
+            <div class="box">
+                <div class="fill_level_box" id="fillLevelBox">
+                    <h2 style="margin-bottom:6px;">Fill Level</h2>
+                    <div class="percentage" id="overallPercentage">--%</div>
+                    <button id="viewMoreBtn" class="view-more-btn">View More ▸</button>
+                </div>
+            </div>
+        </div>
+        <div class="alert_section">
+            <div class="alert_heading_text">
+                <h2>Notifications & Alerts</h2>
+            </div>
+            <div class="notifications">
+                <div class="notification-item1"><span>Wet waste detected & sent to wet
+                        compartment</span><span>22:15</span></div>
+                <div class="notification-item"><span>Dry waste detected & sent to dry
+                        compartment</span><span>22:12</span></div>
+                <div class="notification-item"><span>Bin full – please remove waste</span><span>22:07</span></div>
+                <div class="notification-item"><span>Waste removed – bin ready</span><span>22:05</span></div>
+                <div class="notification-item"><span>Wet waste detected & sent to wet
+                        compartment</span><span>22:03</span></div>
+                <div class="notification-item"><span>Dry waste detected & sent to dry
+                        compartment</span><span>22:01</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="thirdPage">
+        <div class="thirdPageContentBox">
+            <div class="thirdSec">
+                <h2 class="sectionTitle">Camera View</h2>
+                <div class="contentBox camera_box"></div>
+            </div>
+            <div class="thirdSec">
+                <h2 class="sectionTitle">Bin Location</h2>
+                <div class="contentBox mapBox"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Feedback</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> thebinvisionai@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 9359548015</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61557395861212" target="_blank"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://twitter.com/HrishiBondre" target="_blank"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/_hrishi_bondre_45/" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/hrishikesh-bondre-8134902ab/" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required />
+                        <input type="email" name="Email" placeholder="Your Email" required />
+                        <textarea name="Message" class="msg" rows="6" placeholder="Your Message"></textarea>
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn2">Submit</button>
+                            <button type="reset" id="reset" class="btn btn2">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons-footer">
+                <a href="https://www.instagram.com/_hrishi_bondre_45/" target="_blank"><i class="fa-brands fa-instagram"
+                        style="color: #00c30a;"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61557395861212" target="_blank"><i
+                        class="fa-brands fa-facebook" style="color: #00c30a;"></i></a>
+                <a href="https://twitter.com/HrishiBondre" target="_blank"><i class="fa-brands fa-x-twitter"
+                        style="color: #00c30a;"></i></a>
+                <a href="https://www.linkedin.com/in/hrishikesh-bondre-8134902ab/" target="_blank"><i
+                        class="fa-brands fa-linkedin" style="color: #00c30a;"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 BinVisionAI | All rights reserved</p>
+        </div>
+    </footer>
+
+
+    <script>
+
+        // Search bar toggle (desktop)
+        const searchIcon = document.getElementById("searchIcon");
+        const searchBar = document.getElementById("searchBar");
+        const closeSearch = document.getElementById("closeSearch");
+        const searchInput = document.getElementById("searchInput");
+
+        searchIcon.onclick = function () {
+            searchBar.style.display = "flex";
+            searchInput.focus();
+        }
+        closeSearch.onclick = function () {
+            searchBar.style.display = "none";
+            searchInput.value = "";
+        }
+
+        searchInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                let query = searchInput.value.trim();
+                if (query) {
+                    let found = window.find(query);
+                    if (!found) alert("❌ Not found: " + query);
+                }
+            }
+        });
+
+        // Search bar toggle (mobile)
+        const searchIconMobile = document.getElementById("searchIconMobile");
+        const searchBarMobile = document.getElementById("searchBarMobile");
+        const closeSearchMobile = document.getElementById("closeSearchMobile");
+        const searchInputMobile = document.getElementById("searchInputMobile");
+
+        searchIconMobile.onclick = function () {
+            searchBarMobile.style.display = "flex";
+            searchInputMobile.focus();
+        }
+        closeSearchMobile.onclick = function () {
+            searchBarMobile.style.display = "none";
+            searchInputMobile.value = "";
+        }
+
+        searchInputMobile.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                let query = searchInputMobile.value.trim();
+                if (query) {
+                    let found = window.find(query);
+                    if (!found) alert("❌ Not found: " + query);
+                }
+            }
+        });
+
+        //Hamburger
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        });
+
+        // Hide mobile menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.display = 'none';
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // 🔹 Hide menu when clicking outside
+        document.addEventListener('click', (event) => {
+            // check if click is NOT inside mobileMenu AND NOT on hamburger
+            if (
+                mobileMenu.style.display === 'block' &&
+                !mobileMenu.contains(event.target) &&
+                !hamburger.contains(event.target)
+            ) {
+                mobileMenu.style.display = 'none';
+                hamburger.classList.remove('active');
+            }
+        });
+
+
+        // === Configuration ===
+        const BIN_ID = 123; // replace with dynamic bin id if needed
+        const BACKEND_ENDPOINT = `/api/bin/${BIN_ID}/fill`;
+
+        let chartInstance = null;
+
+        // Get DOM elements
+        const fillLevelBox = document.getElementById("fillLevelBox");
+        const overallPercentageEl = document.getElementById("overallPercentage");
+        const viewMoreBtn = document.getElementById("viewMoreBtn");
+
+        // Fetch fill data (simulate backend if unavailable)
+        async function fetchFillData() {
+            try {
+                const response = await fetch(BACKEND_ENDPOINT);
+                if (!response.ok) throw new Error("Network error");
+                return await response.json(); // expected: { e_waste: 20, wet: 30, dry: 50 }
+            } catch {
+                // fallback mock data
+                return { e_waste: 20, wet: 30, dry: 50 };
+            }
+        }
+
+        // Calculate overall percentage (sum / 100)
+        function calculateOverall(data) {
+            return data.e_waste + data.wet + data.dry;
+        }
+
+        // Render chart in box
+        function renderChart(data) {
+            fillLevelBox.innerHTML = ` 
+    <h2 style="color:#fff;margin-bottom:6px;">Bin Composition</h2>
+    <div class="chart-container">
+      <canvas id="wasteChart"></canvas>
+    </div>
+    <div class="chart-legend" id="chartLegend"></div>
+    <button id="closeChartBtn" class="close-chart-btn">Close</button>
+  `;
+
+            const ctx = document.getElementById("wasteChart").getContext("2d");
+
+            if (chartInstance) chartInstance.destroy();
+
+            chartInstance = new Chart(ctx, {
+                type: "doughnut",
+                data: {
+                    labels: ["E-Waste", "Wet Waste", "Dry Waste"],
+                    datasets: [{
+                        data: [data.e_waste, data.wet, data.dry],
+                        backgroundColor: ["#ff5722", "#00c853", "#2196f3"],
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: true }
+                    }
+                }
+            });
+
+            // Create legend
+            const legend = document.getElementById("chartLegend");
+            const colors = ["#ff5722", "#00c853", "#2196f3"];
+            const labels = ["E-Waste", "Wet Waste", "Dry Waste"];
+            [data.e_waste, data.wet, data.dry].forEach((val, i) => {
+                legend.innerHTML += `
+      <div class="legend-item">
+        <span class="legend-color" style="background:${colors[i]}"></span>
+        ${labels[i]}: ${val}%
+      </div>`;
+            });
+
+            // Close button logic
+            document.getElementById("closeChartBtn").addEventListener("click", () => {
+                resetBox(data);
+            });
+        }
+
+        // Reset to compact box view
+        function resetBox(data) {
+            const total = calculateOverall(data);
+            fillLevelBox.innerHTML = `
+    <h2 style="color:#fff; margin-bottom:6px;">Fill Level</h2>
+    <div class="percentage" id="overallPercentage">${total}%</div>
+    <button id="viewMoreBtn" class="view-more-btn">View More ▸</button>
+  `;
+            document.getElementById("viewMoreBtn").addEventListener("click", async () => {
+                const newData = await fetchFillData();
+                renderChart(newData);
+            });
+        }
+
+        // === Initial Setup ===
+        (async function init() {
+            const data = await fetchFillData();
+            const total = calculateOverall(data);
+            overallPercentageEl.textContent = `${total}%`;
+
+            viewMoreBtn.addEventListener("click", async () => {
+                const data = await fetchFillData();
+                renderChart(data);
+            });
+        })();
+
+        // Auto-refresh data every 30s (optional)
+        setInterval(async () => {
+            if (chartInstance) {
+                const updated = await fetchFillData();
+                chartInstance.data.datasets[0].data = [updated.e_waste, updated.wet, updated.dry];
+                chartInstance.update();
+            } else {
+                const data = await fetchFillData();
+                const total = calculateOverall(data);
+                overallPercentageEl.textContent = `${total}%`;
+            }
+        }, 30000);
+
+
+        // Theme toggle (desktop)
+        var icon = document.getElementById("themeChangeButton");
+        icon.onclick = function () {
+            document.body.classList.toggle("light-theme");
+        }
+
+        // Theme toggle (mobile)
+        var iconMobile = document.getElementById("themeChangeButtonMobile");
+        iconMobile.onclick = function () {
+            document.body.classList.toggle("light-theme");
+        }
+
+
+
+
+    </script>
+
+
+</body>
